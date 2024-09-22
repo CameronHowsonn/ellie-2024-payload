@@ -1,0 +1,1 @@
+[![Deploy to Server](https://github.com/CameronHowsonn/chris-why-2024-payload/actions/workflows/deploy.yaml/badge.svg)](https://github.com/CameronHowsonn/chris-why-2024-payload/actions/workflows/deploy.yaml)

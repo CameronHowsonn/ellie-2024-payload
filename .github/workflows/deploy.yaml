@@ -1,0 +1,78 @@
+name: Deploy to Server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install dependencies with npm
+        run: npm install --legacy-peer-deps
+
+      - name: Create .env.production file
+        run: echo "${{ secrets.ENV_PRODUCTION }}" > .env.production
+
+      - name: Build project
+        run: yarn build
+
+      - name: Run deployment script
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
+          SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
+        run: node deploy.js
+# name: Deploy to Server
+
+# on:
+#   push:
+#     branches:
+#       - main
+
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: Checkout repository
+#         uses: actions/checkout@v3
+
+#       - name: Set up Node.js
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: '20'
+
+#       - name: Cache node modules
+#         uses: actions/cache@v2
+#         with:
+#           path: ~/.npm
+#           key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+#           restore-keys: |
+#             ${{ runner.os }}-npm-
+
+#       - name: Install dependencies with npm
+#         run: npm install --legacy-peer-deps
+
+#       - name: Create .env.production file
+#         run: echo "${{ secrets.ENV_PRODUCTION }}" > .env.production
+
+#       - name: Build project
+#         run: yarn build
+
+#       - name: Run deployment script
+#         env:
+#           SSH_HOST: ${{ secrets.SSH_HOST }}
+#           SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
+#           SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
+#         run: node deploy.js
