@@ -7,13 +7,7 @@ const nextConfig = {
     defaultLocale: 'en',
   },
   images: {
-    domains: [
-      'localhost',
-      'www.juicer.io',
-      'howson.codes',
-      'damian.howson.codes',
-      'www.damianokeeffebaritone.co.uk',
-    ],
+    domains: ['localhost', 'www.juicer.io', 'howson.codes', 'ellie.howson.codes'],
   },
   compiler: {
     styledComponents: true,
