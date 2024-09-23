@@ -96,6 +96,7 @@ const Footer: React.FC = () => {
                 onMouseLeave={() => {
                   document.getElementById(color)?.style.setProperty('opacity', '1')
                 }}
+                aria-label={`Change color to ${color}`}
               />
             ))}
           </Container>
