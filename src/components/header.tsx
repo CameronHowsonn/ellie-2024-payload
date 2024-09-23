@@ -39,7 +39,7 @@ const Header: React.FC = () => {
       >
         <Container>
           <HeaderInner>
-            <Heading as="h5" className="title" color="var(--white)">
+            <Heading as="h5" className="title">
               Your PA
             </Heading>
             <HeaderButton
@@ -225,12 +225,15 @@ const HeaderElement = styled.header`
     transition: all 0.2s cubic-bezier(0.15, 0.41, 0.69, 0.94);
     background-color: var(--white);
     .nav-open & {
-      background-color: var(--slate);
+      background-color: var(--primary);
     }
     padding: 1rem 0;
 
     &.headroom--pinned {
       box-shadow: 0 0.025rem 0.01rem rgba(0, 0, 0, 0.1);
+      .nav-open & {
+        box-shadow: none;
+      }
       a {
         p {
           color: var(--slate);
@@ -269,6 +272,14 @@ const HeaderInner = styled.div`
   .title {
     position: relative;
     z-index: 5;
+    color: var(--white);
+
+    .headroom--pinned & {
+      color: var(--slate);
+    }
+    .nav-open & {
+      color: var(--white);
+    }
   }
 
   @media (min-width: 48rem) {

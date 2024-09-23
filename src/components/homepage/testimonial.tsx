@@ -9,7 +9,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination } from 'swiper/modules'
 
 import 'swiper/css'
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { Swiper as SwiperType } from 'swiper/types'
 import Heading from '@/components/heading'
 
@@ -19,6 +19,21 @@ interface TestimonialBlockProps {
 
 const Testimonial: React.FC<TestimonialBlockProps> = ({ block }) => {
   const swiperRef = useRef<SwiperType | null>(null)
+
+  useEffect(() => {
+    // Reinit the swiper when the window is resized
+    const handleResize = () => {
+      swiperRef.current?.update()
+    }
+
+    handleResize()
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
 
   return (
     <TestimonialSection ariaLabelledBy={block?.id || 'testimonial-block'} id="testimonial">
