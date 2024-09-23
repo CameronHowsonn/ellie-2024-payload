@@ -36,8 +36,8 @@ export const getStaticProps: GetStaticProps = async () => {
       props: {
         data: homepageCmsData,
         meta: {
-          title: `Optimise - Your First Class PA Provider`,
-          description: `Hi, my name is Ellie, and I am the owner and founder of Optimise - Your First Class Personal Assistant Provider. With 21 years of experience working for a world-renowned airline, I specialized in looking after VIPs and high-profile customers.`,
+          title: `Your PA - Your First Class Personal Assistant`,
+          description: `Delivering VIP service to high-profile clients, I know what it takes to provide exceptional care and anticipate every need - often before it's even voiced.`,
         },
       },
       revalidate: 30,

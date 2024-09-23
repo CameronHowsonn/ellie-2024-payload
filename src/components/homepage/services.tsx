@@ -58,6 +58,17 @@ const ServicesSection = styled(Section)`
   h2&:not(#services-title) {
     font-size: 32px;
   }
+
+  svg {
+    width: auto;
+    height: 3.5rem;
+    @media (min-width: 48rem) {
+      height: 5rem;
+    }
+    path {
+      fill: var(--primary);
+    }
+  }
 `
 
 const ServicesGrid = styled.div`

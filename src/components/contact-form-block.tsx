@@ -90,6 +90,9 @@ export default ContactForm
 
 export const ContactFormSection = styled(Section)`
   background-color: var(--white);
+  @media (min-width: 48rem) {
+    padding-block-start: 0;
+  }
 
   form {
     @media (max-width: 47.9375rem) {

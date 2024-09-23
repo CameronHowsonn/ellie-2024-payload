@@ -10,7 +10,7 @@ import Text from '@/components/text'
 import SocialLinks from '@/components/social-links'
 
 export const headerItems: Array<{ title: string; url: string }> = [
-  { title: 'Biography', url: '#biography' },
+  { title: 'About', url: '#about' },
   { title: 'Services', url: '#services' },
   { title: 'Contact', url: '#contact' },
 ]
