@@ -76,11 +76,13 @@ const Testimonial: React.FC<TestimonialBlockProps> = ({ block }) => {
                         {' "'}
                       </Heading>
                     )}
-                    <RichText
-                      text={testimonial?.quote_html}
-                      color="var(--white)"
-                      className="testimonial-text"
-                    />
+                    {testimonial?.quote_html && (
+                      <RichText
+                        text={testimonial?.quote_html}
+                        color="var(--white)"
+                        className="testimonial-text"
+                      />
+                    )}
                     {testimonial?.author && (
                       <Text
                         fontWeight={600}

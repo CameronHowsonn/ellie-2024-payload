@@ -4,11 +4,16 @@ import { layout, space, position, typography, border } from 'styled-system'
 import Stack from '@/components/stack'
 export interface RichTextProps extends Props {
   text: any
+  className?: string
 }
 
-const RichText: React.FC<RichTextProps> = ({ text }) => {
+const RichText: React.FC<RichTextProps> = ({ text, className }) => {
   return (
-    <RichTextSpan dangerouslySetInnerHTML={{ __html: text }} className="animate-opaque" gap={4} />
+    <RichTextSpan
+      dangerouslySetInnerHTML={{ __html: text }}
+      className={`animate-opaque ${className}`}
+      gap={4}
+    />
   )
 }
 
