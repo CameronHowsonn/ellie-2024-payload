@@ -12,6 +12,7 @@ export default async function handler(req: InstgramNextApiRequest, res: NextApiR
   try {
     const response = await fetch(FEED_URL)
     const data = await response.json()
+    console.log(data)
     res.status(200).json(data)
   } catch (error) {
     res.status(500).json({ error: error })

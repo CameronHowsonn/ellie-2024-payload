@@ -177,7 +177,7 @@ const ContactFormElement: React.FC<ContactFormPropsOne> = ({ title, subtitle }) 
 export default ContactFormElement
 
 const FormSection = styled(Section)`
-  padding-block: 6rem;
+  padding-block: 0rem 6rem;
 
   @media (min-width: 48rem) {
     padding-block: 4rem;

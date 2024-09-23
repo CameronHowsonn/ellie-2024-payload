@@ -18,14 +18,9 @@ const Services: React.FC<ServicesProps> = ({ block }) => {
   return (
     <ServicesSection ariaLabelledBy={block?.id || 'services-title'} id="services">
       <Container>
-        <Stack gap={8}>
+        <Stack gap={[4, 4, 2]}>
           {block?.title && (
-            <Heading
-              as="h2"
-              id={block?.id || 'services-title'}
-              textAlign={'center'}
-              className="animate"
-            >
+            <Heading as="h2" id={block?.id || 'services-title'} className="animate">
               {block?.title}
             </Heading>
           )}
@@ -60,11 +55,7 @@ const ServicesSection = styled(Section)`
     padding-block-start: 0;
   }
 
-  h2 {
-    text-align: center;
-  }
-
-  h3 {
+  h2&:not(#services-title) {
     font-size: 32px;
   }
 `

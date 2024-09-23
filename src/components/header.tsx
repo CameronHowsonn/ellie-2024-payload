@@ -39,7 +39,9 @@ const Header: React.FC = () => {
       >
         <Container>
           <HeaderInner>
-            <div></div>
+            <Heading as="h5" className="title" color="var(--white)">
+              Your PA
+            </Heading>
             <HeaderButton
               $isOpen={isOpen}
               onClick={() => {
@@ -252,7 +254,7 @@ const HeaderElement = styled.header`
           width: 100%;
           height: 100%;
           background: linear-gradient(to bottom, var(--black), transparent);
-          z-index: 0;
+          z-index: -1;
           opacity: 0.8;
         }
       }
@@ -265,6 +267,12 @@ const HeaderInner = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 0 1rem;
+
+  .title {
+    position: relative;
+    z-index: 5;
+  }
+
   @media (min-width: 48rem) {
     padding: 1rem;
   }

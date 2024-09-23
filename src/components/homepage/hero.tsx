@@ -38,15 +38,7 @@ const HomepageHero: React.FC<HomepageHeroProps> = ({ block }) => {
               }}
             />
             <Stack gap={1} width="100%">
-              <Image
-                src="/logo.png"
-                width={210}
-                height={141}
-                alt="logo"
-                className="logo"
-                quality={100}
-              />
-              <Heading as="h3" color="var(--white)" fontSize="1rem">
+              <Heading as="h2" color="var(--white)" fontSize="1rem" className="hero-title">
                 {block?.heroTitle}
               </Heading>
             </Stack>
@@ -60,6 +52,12 @@ const HomepageHero: React.FC<HomepageHeroProps> = ({ block }) => {
 export default HomepageHero
 
 const HomepageHeroSection = styled(Section)`
+  .hero-title {
+    font-size: 2rem;
+    position: relative;
+    z-index: 2;
+  }
+
   .logo {
     position: relative;
     z-index: 2;
@@ -90,6 +88,7 @@ const TextContainer = styled.div`
 const HomepageInner = styled.div`
   position: relative;
   height: 60vh;
+  min-height: 400px;
 
   img {
     object-position: 60% center;
@@ -99,15 +98,15 @@ const HomepageInner = styled.div`
   }
 
   &::before {
-    width: 80vw;
+    width: 100vw;
     height: 100%;
     content: '';
     position: absolute;
     top: 0;
-    left: 0;
+    right: 0;
     z-index: 1;
-    opacity: 0.75;
-    background: linear-gradient(to right, var(--black), transparent);
+    opacity: 0.5;
+    background: linear-gradient(to top, var(--black), transparent);
   }
 
   h3,

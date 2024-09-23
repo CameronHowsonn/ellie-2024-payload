@@ -3,13 +3,14 @@ import type { Props } from './text'
 import { layout, space, position, typography, border, color } from 'styled-system'
 export interface RichTextProps extends Props {
   text: any
+  className?: string
 }
 
-const RichText: React.FC<RichTextProps> = ({ text, color }, rest) => {
+const RichText: React.FC<RichTextProps> = ({ text, color, className }, rest) => {
   return (
     <RichTextSpan
       dangerouslySetInnerHTML={{ __html: text }}
-      className="animate"
+      className={`animate ${className}`}
       color={color}
       {...rest}
     />

@@ -40,7 +40,7 @@ const Biography: React.FC<BiographyProps> = ({ block }) => {
   const text = block?.subtext_html
 
   return (
-    <OffsetSection ariaLabelledBy={id} id="about">
+    <OffsetSection ariaLabelledBy={id} id="biography">
       <Container>
         <BiographyGrid>
           <ContentStack gap={[2, 2, 4]} ref={ref}>

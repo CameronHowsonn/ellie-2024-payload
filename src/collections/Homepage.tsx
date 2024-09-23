@@ -164,20 +164,33 @@ const TestimonialBlock: Block = {
   },
   fields: [
     {
-      name: 'quote',
-      label: 'Quote',
-      type: 'richText',
+      type: 'array',
+      name: 'testimonials',
       required: true,
-      editor: lexicalEditor({
-        features: ({ defaultFeatures }) => [...defaultFeatures, HTMLConverterFeature({})],
-      }),
-    },
-    lexicalHTML('quote', { name: 'quote_html' }),
-    {
-      name: 'author',
-      label: 'Author',
-      type: 'text',
-      required: true,
+      minRows: 1,
+      fields: [
+        {
+          name: 'title',
+          label: 'Title',
+          type: 'text',
+        },
+        {
+          name: 'quote',
+          label: 'Quote',
+          type: 'richText',
+          required: true,
+          editor: lexicalEditor({
+            features: ({ defaultFeatures }) => [...defaultFeatures, HTMLConverterFeature({})],
+          }),
+        },
+        lexicalHTML('quote', { name: 'quote_html' }),
+        {
+          name: 'author',
+          label: 'Author',
+          type: 'text',
+          required: true,
+        },
+      ],
     },
   ],
 }

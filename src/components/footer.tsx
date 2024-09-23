@@ -25,14 +25,9 @@ const colorOptions = [
 
 export const footerSocialLinks: Array<{ url: string; icon: React.FC; linkName: string }> = [
   {
-    url: 'https://www.instagram.com/damianokeeffetenor/',
+    url: 'https://www.instagram.com/yourfirstclasspa',
     icon: InstagramIcon,
     linkName: 'Instagram Link',
-  },
-  {
-    url: 'https://www.facebook.com/damianokeeffetenor/',
-    icon: FacebookIcon,
-    linkName: 'Facebook Link',
   },
 ]
 
@@ -76,7 +71,6 @@ const Footer: React.FC = () => {
                 &copy; {new Date().getFullYear()} Optimise
               </Text>
             </FooterCredits>
-
             {colorOptions.map((color, index) => (
               <button
                 key={index}
@@ -178,9 +172,13 @@ const FooterInner = styled.div`
   max-width: 100%;
   width: 100%;
 
+  @media (max-width: 47.9375rem) {
+    padding-block-start: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
   @media (min-width: 48rem) {
     grid-template-columns: auto auto;
-
     justify-content: space-between;
   }
 `

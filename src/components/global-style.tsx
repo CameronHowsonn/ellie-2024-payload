@@ -6,7 +6,7 @@ import { Open_Sans } from 'next/font/google'
 const RalewayFont = Raleway({
   weight: ['200', '400', '500', '700'],
   subsets: ['latin'],
-  style: 'normal',
+  style: ['normal', 'italic'],
 })
 
 const OpenSansFont = Open_Sans({
@@ -82,12 +82,13 @@ const GlobalStyle = createGlobalStyle`
       font-weight: 500;
       font-style: normal;
       letter-spacing: -2%;
+      color: #181818;
     }
 
     p, a, button, input, label {
       font-family: var(--font-open-sans);
       letter-spacing: 3.5%;
-      color: black;
+      color: #181818;
     }
 
     a {
@@ -209,8 +210,9 @@ const GlobalStyle = createGlobalStyle`
     }
 
       #contact {
-    width: 100%;
-  }
+        width: 100%;
+        padding-block-end: 0;
+      }
 
     
   `

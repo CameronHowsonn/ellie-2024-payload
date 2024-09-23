@@ -37,10 +37,9 @@ const ContactForm: React.FC<ContactFormProps> = ({ block }) => {
                   <Heading as={'h3'} color="var(--primary)">
                     Email
                   </Heading>
-
-                  <Link href="mailto:contact@test.co.uk">
+                  <Link href="mailto:ellie@your-pa.co.uk">
                     <Text fontSize={'18px'} color="var(--white)">
-                      contact@test.co.uk
+                      ellie@your-pa.co.uk
                     </Text>
                   </Link>
                 </Stack>
@@ -48,14 +47,9 @@ const ContactForm: React.FC<ContactFormProps> = ({ block }) => {
                   <Heading as={'h3'} color="var(--primary)">
                     Phone
                   </Heading>
-                  <Link href="tel:01903 5573332">
+                  <Link href="tel:07415884746">
                     <Text fontSize={'18px'} color="var(--white)">
-                      01903 5573332
-                    </Text>
-                  </Link>
-                  <Link href="tel:07495554365">
-                    <Text fontSize={'18px'} color="var(--white)">
-                      07495554365
+                      07415884746
                     </Text>
                   </Link>
                 </Stack>
@@ -80,7 +74,6 @@ const ContactForm: React.FC<ContactFormProps> = ({ block }) => {
                     <Heading as={'h3'} color="var(--primary)">
                       Socials
                     </Heading>
-
                     <SocialLinks showTitle={false} />
                   </Stack>
                 </Stack>
@@ -97,7 +90,12 @@ export default ContactForm
 
 export const ContactFormSection = styled(Section)`
   background-color: var(--white);
-  padding-block: 0;
+
+  form {
+    @media (max-width: 47.9375rem) {
+      padding-block-start: 2rem;
+    }
+  }
 `
 
 export const ContactFormContainer = styled.div``
@@ -152,7 +150,7 @@ export const ContactFormRight = styled.div`
   position: relative;
   width: 100%;
   min-width: 100%;
-  padding: 0 1.5rem;
+  padding: 3rem 1.5rem 0 1.5rem;
   background-color: #1a1a1a;
 
   address {
