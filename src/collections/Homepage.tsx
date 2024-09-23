@@ -188,7 +188,6 @@ const TestimonialBlock: Block = {
           name: 'author',
           label: 'Author',
           type: 'text',
-          required: true,
         },
       ],
     },

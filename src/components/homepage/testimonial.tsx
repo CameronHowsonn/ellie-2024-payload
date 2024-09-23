@@ -23,7 +23,7 @@ const Testimonial: React.FC<TestimonialBlockProps> = ({ block }) => {
   return (
     <TestimonialSection ariaLabelledBy={block?.id || 'testimonial-block'} id="testimonial">
       <Container>
-        <TestimonialStack>
+        <TestimonialStack gap={4}>
           <SwiperContainer>
             <svg
               width="41"
@@ -49,6 +49,7 @@ const Testimonial: React.FC<TestimonialBlockProps> = ({ block }) => {
                 el: '.swiper-pagination-container',
                 clickable: true,
               }}
+              autoHeight
             >
               {block?.testimonials?.map((testimonial, index) => (
                 <SwiperSlide key={index}>
@@ -65,9 +66,15 @@ const Testimonial: React.FC<TestimonialBlockProps> = ({ block }) => {
                       color="var(--white)"
                       className="testimonial-text"
                     />
-                    <Text fontWeight={600} id={block?.id || 'testimonial-block'} className="author">
-                      {testimonial?.author}
-                    </Text>
+                    {testimonial?.author && (
+                      <Text
+                        fontWeight={600}
+                        id={block?.id || 'testimonial-block'}
+                        className="author"
+                      >
+                        {testimonial?.author}
+                      </Text>
+                    )}
                   </Stack>
                 </SwiperSlide>
               ))}
@@ -100,10 +107,7 @@ const DotContainer = styled.div`
   display: flex;
   justify-content: center;
   gap: 1rem;
-  position: absolute;
-  bottom: 5rem;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
 
   span {
     cursor: pointer;
@@ -127,7 +131,8 @@ const SwiperContainer = styled.div`
   width: 100%;
 
   .testimonial-text {
-    max-width: 85%;
+    max-width: 85vw;
+    width: 100%;
     margin-inline: auto;
     @media (min-width: 48rem) {
       max-width: 45.5625rem;
@@ -155,7 +160,7 @@ const TestimonialSection = styled(Section)`
   justify-content: center;
   position: relative;
   overflow: hidden;
-  padding-block: 6rem;
+  padding-block: 6rem 4rem;
 
   .swiper-container {
     width: 100%;
@@ -197,7 +202,7 @@ const TestimonialSection = styled(Section)`
   }
 `
 
-const TestimonialStack = styled.div`
+const TestimonialStack = styled(Stack)`
   text-align: center;
   margin-inline: auto;
 

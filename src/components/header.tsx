@@ -230,9 +230,7 @@ const HeaderElement = styled.header`
     padding: 1rem 0;
 
     &.headroom--pinned {
-      @media (min-width: 48rem) {
-        box-shadow: 0 0.025rem 0.01rem rgba(0, 0, 0, 0.1);
-      }
+      box-shadow: 0 0.025rem 0.01rem rgba(0, 0, 0, 0.1);
       a {
         p {
           color: var(--slate);
