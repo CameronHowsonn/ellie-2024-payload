@@ -39,9 +39,6 @@ const Header: React.FC = () => {
       >
         <Container>
           <HeaderInner>
-            <Heading as="h5" className="title">
-              Your PA
-            </Heading>
             <HeaderButton
               $isOpen={isOpen}
               onClick={() => {
