@@ -13,7 +13,7 @@ import FacebookIcon from './icons/facebook'
 import SocialLinks from './social-links'
 import UseIsMobile from '@/hooks/use-is-mobile'
 
-const colorOptions = ['002f5c', '004987', '004F92', '002A5E', '001A5F']
+// const colorOptions = ['002f5c', '004987', '004F92', '002A5E', '001A5F']
 
 export const footerSocialLinks: Array<{ url: string; icon: React.FC; linkName: string }> = [
   {
@@ -241,7 +241,7 @@ const Footer: React.FC = () => {
                 &copy; {new Date().getFullYear()} Your PA
               </Text>
             </FooterCredits>
-            {colorOptions.map((color, index) => (
+            {/* {colorOptions.map((color, index) => (
               <button
                 key={index}
                 onClick={() => {
@@ -268,7 +268,7 @@ const Footer: React.FC = () => {
                 }}
                 aria-label={`Change color to ${color}`}
               />
-            ))}
+            ))} */}
           </Container>
         </Stack>
       </FooterElement>
@@ -289,6 +289,7 @@ export const Right = styled.div`
   }
   @media (min-width: 48rem) {
     margin-left: auto;
+    margin-top: auto;
   }
 `
 
