@@ -108,6 +108,7 @@ const ContentStack = styled(Stack)`
   @media (min-width: 64rem) {
     display: grid;
     grid-template-rows: 0rem 9rem auto;
+    justify-content: space-between;
 
     .biography-subtitle {
       grid-area: 1 / 1 / 2 / 6;
@@ -121,6 +122,7 @@ const ContentStack = styled(Stack)`
     .biography-content {
       max-width: 34.9375rem;
       grid-area: 3 / 4 / 5 / 6;
+      margin-left: auto;
     }
 
     #biography-quote {
@@ -151,6 +153,11 @@ const ImageContainer = styled.div`
 
   &.first-image {
     margin-top: 2rem;
+    img {
+      @media (max-width: 47.9375rem) {
+        max-height: 290px;
+      }
+    }
     @media (max-width: 47.9375rem) {
       margin-left: auto;
       width: 80%;

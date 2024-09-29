@@ -28,7 +28,7 @@ export const colors = {
   successGreen: '#4CAF50',
   slate: '#1E232B',
   red: '#D14C4C',
-  primary: '#7C9EBD',
+  primary: '#002a7c',
 }
 
 export default theme

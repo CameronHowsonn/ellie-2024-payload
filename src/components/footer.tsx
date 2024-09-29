@@ -56,7 +56,7 @@ const Footer: React.FC = () => {
                         }
                       }}
                     >
-                      <Heading color="var(--primary)" as="h3">
+                      <Heading color="var(--white)" as="h3">
                         {item.title}
                       </Heading>
                     </Link>
@@ -65,40 +65,11 @@ const Footer: React.FC = () => {
               </LeftStack>
             </FooterInner>
             <FooterCredits>
-              <Text color="var(--primary)">Website By Cameron Howson</Text>
-              <Text color="var(--primary)" id="credits">
-                {/* copyright symbol */}
-                &copy; {new Date().getFullYear()} Optimise
+              <Text color="var(--white)">Website By Cameron Howson</Text>
+              <Text color="var(--white)" id="credits">
+                &copy; {new Date().getFullYear()} Your PA
               </Text>
             </FooterCredits>
-            {colorOptions.map((color, index) => (
-              <button
-                key={index}
-                onClick={() => {
-                  document.documentElement.style.setProperty('--primary', color)
-                }}
-                id={color}
-                style={{
-                  backgroundColor: color,
-                  width: '50px',
-                  height: '50px',
-                  borderRadius: '50%',
-                  cursor: 'pointer',
-                  border: 'none',
-                  marginTop: '2rem',
-                  marginLeft: '1rem',
-                  transition: 'opacity 0.2s ease-in-out',
-                }}
-                onMouseEnter={(e) => {
-                  // darkens the color on hover
-                  document.getElementById(color)?.style.setProperty('opacity', '0.5')
-                }}
-                onMouseLeave={() => {
-                  document.getElementById(color)?.style.setProperty('opacity', '1')
-                }}
-                aria-label={`Change color to ${color}`}
-              />
-            ))}
           </Container>
         </Stack>
       </FooterElement>
@@ -138,6 +109,10 @@ const FooterSection = styled(Section)`
   background-color: #1a1a1a;
   padding-block-start: 6rem;
   padding-block-end: 3rem;
+
+  p {
+    opacity: 0.5;
+  }
 `
 
 const FooterCredits = styled.div`

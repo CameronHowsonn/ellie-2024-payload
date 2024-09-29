@@ -21,7 +21,6 @@ const Testimonial: React.FC<TestimonialBlockProps> = ({ block }) => {
   const swiperRef = useRef<SwiperType | null>(null)
 
   useEffect(() => {
-    // Reinit the swiper when the window is resized
     const handleResize = () => {
       swiperRef.current?.update()
     }
@@ -70,7 +69,7 @@ const Testimonial: React.FC<TestimonialBlockProps> = ({ block }) => {
                 <SwiperSlide key={index}>
                   <Stack gap={1}>
                     {testimonial?.title && (
-                      <Heading as="h5" fontStyle="italic" color="var(--white)">
+                      <Heading as="h5" fontStyle="italic" color="var(--white)" className="ignore">
                         {'" '}
                         {testimonial?.title}
                         {' "'}
@@ -152,7 +151,7 @@ const SwiperContainer = styled.div`
     width: 100%;
     margin-inline: auto;
     @media (min-width: 48rem) {
-      max-width: 45.5625rem;
+      max-width: 41.5625rem;
     }
   }
 
@@ -186,6 +185,14 @@ const TestimonialSection = styled(Section)`
 
   .swiper-slide {
     width: 100% !important;
+    opacity: 0;
+    transition: opacity 0.5s ease 0.5s, transform 0.5s ease 0.5s;
+    transition-delay: 0.25s;
+    transform: translateY(1rem);
+    &-active {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   .swiper {

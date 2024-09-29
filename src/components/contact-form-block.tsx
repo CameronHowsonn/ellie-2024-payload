@@ -34,7 +34,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ block }) => {
               </Heading>
               <Stack gap={4}>
                 <Stack gap={1}>
-                  <Heading as={'h3'} color="var(--primary)">
+                  <Heading as={'h3'} color="var(--white)" className="heading">
                     Email
                   </Heading>
                   <Link href="mailto:ellie@your-pa.co.uk">
@@ -44,7 +44,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ block }) => {
                   </Link>
                 </Stack>
                 <Stack gap={1}>
-                  <Heading as={'h3'} color="var(--primary)">
+                  <Heading as={'h3'} color="var(--white)" className="heading">
                     Phone
                   </Heading>
                   <Link href="tel:07415884746">
@@ -54,24 +54,27 @@ const ContactForm: React.FC<ContactFormProps> = ({ block }) => {
                   </Link>
                 </Stack>
                 <Stack gap={1}>
-                  <Heading as={'h3'} color="var(--primary)">
+                  <Heading as={'h3'} color="var(--white)" className="heading">
                     Address
                   </Heading>
                   <address>
                     <Text fontSize={'18px'} color="var(--white)">
-                      123 Fake Street
+                      Ground Floor Offices,
                     </Text>
                     <Text fontSize={'18px'} color="var(--white)">
-                      London
+                      53 The High Street
                     </Text>
                     <Text fontSize={'18px'} color="var(--white)">
-                      W1A 1AA
+                      Arundel
+                    </Text>
+                    <Text fontSize={'18px'} color="var(--white)">
+                      BN18 9AJ
                     </Text>
                   </address>
                 </Stack>
                 <Stack gap={1}>
                   <Stack gap={2}>
-                    <Heading as={'h3'} color="var(--primary)">
+                    <Heading as={'h3'} color="var(--white)" className="heading">
                       Socials
                     </Heading>
                     <SocialLinks showTitle={false} />
@@ -94,10 +97,8 @@ export const ContactFormSection = styled(Section)`
     padding-block-start: 0;
   }
 
-  form {
-    @media (max-width: 47.9375rem) {
-      padding-block-start: 2rem;
-    }
+  .heading {
+    opacity: 0.6;
   }
 `
 

@@ -80,16 +80,16 @@ const ContactFormElement: React.FC<ContactFormPropsOne> = ({ title, subtitle }) 
         >
           <Stack gap={10}>
             <Stack gap={4}>
-              <Stack gap={0}>
+              <Stack gap={2}>
                 <Heading as="h2" color="#1A1A1A">
                   {title}
                 </Heading>
+                {subtitle && (
+                  <Text color="#1A1A1A" opacity="0.8">
+                    {subtitle}
+                  </Text>
+                )}
               </Stack>
-              {subtitle && (
-                <Text color="#1A1A1A" opacity="0.8">
-                  {subtitle}
-                </Text>
-              )}
             </Stack>
             <Stack gap={6} className="left">
               {!isSuccess && (
