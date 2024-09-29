@@ -29,6 +29,11 @@ export const footerSocialLinks: Array<{ url: string; icon: React.FC; linkName: s
     icon: InstagramIcon,
     linkName: 'Instagram Link',
   },
+  {
+    url: 'https://www.facebook.com/profile.php?id=61566743394529',
+    icon: FacebookIcon,
+    linkName: 'Facebook Link',
+  },
 ]
 
 const Footer: React.FC = () => {
