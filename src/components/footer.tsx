@@ -13,16 +13,7 @@ import FacebookIcon from './icons/facebook'
 import SocialLinks from './social-links'
 import UseIsMobile from '@/hooks/use-is-mobile'
 
-const colorOptions = [
-  '#B026FF',
-  '#CEA2FD',
-  '#7C9EBD',
-  '#4B5E2F',
-  '#00798C',
-  '#C64191',
-  '#449DD1',
-  '#FF6978',
-]
+const colorOptions = ['002f5c', '004987', '004F92', '002A5E', '001A5F']
 
 export const footerSocialLinks: Array<{ url: string; icon: React.FC; linkName: string }> = [
   {
@@ -250,6 +241,34 @@ const Footer: React.FC = () => {
                 &copy; {new Date().getFullYear()} Your PA
               </Text>
             </FooterCredits>
+            {colorOptions.map((color, index) => (
+              <button
+                key={index}
+                onClick={() => {
+                  document.documentElement.style.setProperty('--primary', `#${color}`)
+                }}
+                id={color}
+                style={{
+                  backgroundColor: `#${color}`,
+                  width: '50px',
+                  height: '50px',
+                  borderRadius: '50%',
+                  cursor: 'pointer',
+                  border: 'none',
+                  marginTop: '2rem',
+                  marginLeft: '1rem',
+                  transition: 'opacity 0.2s ease-in-out',
+                }}
+                onMouseEnter={(e) => {
+                  // darkens the color on hover
+                  document.getElementById(color)?.style.setProperty('opacity', '0.5')
+                }}
+                onMouseLeave={() => {
+                  document.getElementById(color)?.style.setProperty('opacity', '1')
+                }}
+                aria-label={`Change color to ${color}`}
+              />
+            ))}
           </Container>
         </Stack>
       </FooterElement>
