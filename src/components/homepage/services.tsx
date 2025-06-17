@@ -79,5 +79,10 @@ const ServicesGrid = styled.div`
   @media (min-width: 48rem) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     padding-block: 4rem 6rem;
+
+    // If odd number of children, make the last one span both columns
+    & > *:nth-last-child(1):nth-child(odd) {
+      grid-column: 1 / -1;
+    }
   }
 `

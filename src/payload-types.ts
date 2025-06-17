@@ -149,7 +149,7 @@ export interface Homepage {
                 [k: string]: unknown
               }
               description_html?: string | null
-              icon: 'family' | 'plane' | 'calendar' | 'notepad' | 'office' | 'contact'
+              icon: 'family' | 'plane' | 'calendar' | 'notepad' | 'office' | 'contact' | 'personal'
               id?: string | null
             }[]
             id?: string | null

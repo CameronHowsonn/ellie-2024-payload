@@ -149,6 +149,10 @@ const ServicesBlock: Block = {
               label: 'Contact',
               value: 'contact',
             },
+            {
+              label: 'personal',
+              value: 'personal',
+            },
           ],
         },
       ],
